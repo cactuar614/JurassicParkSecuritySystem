@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Matt Huber</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>-->
+	<script src="js/jquery.min.js"></script>	
+	<script type="text/javascript">
+		
+		var firstSequence = new Array('a' ,'c','c','e','s','s','_','m','a','i','n','_','p','r','o','g','r','a','m');
+		var firstSequenceIndex = 0;
+		var secondSequence = new Array('a' ,'c','c','e','s','s','_','m','a','i','n','_','s','e','c','u','r','i','t','y');
+		var secondSequenceIndex = 0;
+		var thirdSequence = new Array('a' ,'c','c','e','s','s','_','m','a','i','n','_','p','r','o','g','r','a','m','_','s','e','c','u','r','i','t','y');
+		var thirdSequenceIndex = 0;
+		var enterPressed = 0;
+		
+		setInterval(function(){
+			//var color = $("#hackercursor").css("background-color");
+			//if(color === "rgb(255, 255, 255)")
+			//{
+			//	$("#hackercursor").css("background-color", "#0000FF");
+			//}
+			//else 
+			//{
+			//	$("#hackercursor").css("background-color", "#FFFFFF");
+			//}
+			
+			var color = $("#hackercursor").css("display");
+			if(color === "inline-block")
+			{
+				$("#hackercursor").css("display", "none");
+			}
+			else 
+			{
+				$("#hackercursor").css("display", "inline-block");
+			}
+		}, 1000);
+		
+		
+		$(document).keypress(function(e) {
+			//check if returne pressed
+			if(e.which == '13'){
+				if(enterPressed < 3)
+				{
+					enterPressed = enterPressed + 1;
+					$("#leethax").append("<br/>access: PERMISSION DENIED<br/>");
+				}				
+				else if(enterPressed > 3)
+				{
+					return;
+				}
+				
+				
+			}
+			
+			if(enterPressed === 0 && e.which != '13')
+			{
+				$("#leethax").append(firstSequence[firstSequenceIndex]);
+				firstSequenceIndex = firstSequenceIndex + 1;
+			}if(enterPressed === 1 && e.which != '13')
+			{
+				$("#leethax").append(secondSequence[secondSequenceIndex]);
+				secondSequenceIndex = secondSequenceIndex + 1;
+			}if(enterPressed === 2 && e.which != '13')
+			{
+				$("#leethax").append(thirdSequence[thirdSequenceIndex]);
+				thirdSequenceIndex = thirdSequenceIndex + 1;
+			}			
+			else if(enterPressed === 3)
+			{
+				setInterval(function(){
+				
+					$("#leethax").append("YOU DIDN'T SAY THE MAGIC WORD!<br/>");
+				}, 50);
+			}
+		});
+	
+	</script>
+</head>
+
+<body>
+	<div id="hackertext"> 
+		Jurassic Park, System Security Interface<br/>
+		Version 4.0.5 alpha E<br/>
+		ready...<br/>
+		<div id="leethax">
+			
+			
+		</div>
+	</div>
+</body>
+</html>
