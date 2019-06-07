@@ -18,3 +18,14 @@ font-family: Lucida Console;
 	padding:0px;
 	display:inline-block
 }
+#whte_rbt_obj{
+	display:none;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	top: 30%;
+	margin-top: -50px;
+}
+#whte_rbt_obj_container{
+	position:relative;
+}

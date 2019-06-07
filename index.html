@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Matt Huber</title>
+	<title>Central Park Control Console</title>
 	<meta charset="utf-8" />
 	
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
@@ -17,17 +17,7 @@
 		var thirdSequenceIndex = 0;
 		var enterPressed = 0;
 		
-		setInterval(function(){
-			//var color = $("#hackercursor").css("background-color");
-			//if(color === "rgb(255, 255, 255)")
-			//{
-			//	$("#hackercursor").css("background-color", "#0000FF");
-			//}
-			//else 
-			//{
-			//	$("#hackercursor").css("background-color", "#FFFFFF");
-			//}
-			
+		setInterval(function(){			
 			var color = $("#hackercursor").css("display");
 			if(color === "inline-block")
 			{
@@ -41,7 +31,7 @@
 		
 		
 		$(document).keypress(function(e) {
-			//check if returne pressed
+			//check if return pressed
 			if(e.which == '13'){
 				if(enterPressed < 3)
 				{
@@ -71,8 +61,8 @@
 			}			
 			else if(enterPressed === 3)
 			{
-				setInterval(function(){
-				
+				document.getElementById("whte_rbt_obj").style.display = "block";
+				setInterval(function(){				
 					$("#leethax").append("YOU DIDN'T SAY THE MAGIC WORD!<br/>");
 				}, 50);
 			}
@@ -82,6 +72,9 @@
 </head>
 
 <body>
+	<div id=white_rbt_obj_container>
+		<img src="img/whte_rbt.obj.gif" id="whte_rbt_obj"/>
+	</div>
 	<div id="hackertext"> 
 		Jurassic Park, System Security Interface<br/>
 		Version 4.0.5 alpha E<br/>
